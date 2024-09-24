@@ -19,7 +19,9 @@ int main() {
     moeda100 = restoMoedas;
     moeda50 = ((restoMoedas - 1) * 100) / 50;
     moeda25 = (((restoMoedas - 1) * 100) - 50) / 25;
-    // nao deu certo, continuar testando -> moeda10 = (((restoMoedas - 1) * 100) - 50) / 10;
+    if(moeda25 == 0){
+    moeda10 = (((restoMoedas - 1) * 100) - 50) / 10;
+    }
 
     printf("NOTAS:\n");
     printf("%d nota(s) de R$ 100,00\n", nota100);
