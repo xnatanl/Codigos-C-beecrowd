@@ -1,40 +1,59 @@
 #include <stdio.h>
 
 int main() {
-
-    double valor, restoMoedas;
+    double valor;
     int nota100, nota50, nota20, nota10, nota5, nota2;
-    int moeda100, moeda50, moeda25, moeda10, moeda5, moeda1;
+    int moeda100 = 0, moeda50 = 0, moeda25 = 0, moeda10 = 0, moeda5 = 0, moeda1 = 0;
+    int restoMoedas;
 
+    // Leitura do valor
     scanf("%lf", &valor);
 
+    // Cálculo das notas
     nota100 = valor / 100;
-    nota50 = (valor - (nota100*100)) / 50;
-    nota20 = (valor - (nota100*100) - (nota50*50)) / 20;
-    nota10 = (valor - (nota100*100) - (nota50*50) - (nota20*20)) / 10;
-    nota5 = (valor - (nota100*100) - (nota50*50) - (nota20*20) - (nota10*10)) / 5;
-    nota2 =  (valor - (nota100*100) - (nota50*50) - (nota20*20) - (nota10*10) - (nota5*5)) / 2;
+    nota50 = (valor - (nota100 * 100)) / 50;
+    nota20 = (valor - (nota100 * 100) - (nota50 * 50)) / 20;
+    nota10 = (valor - (nota100 * 100) - (nota50 * 50) - (nota20 * 20)) / 10;
+    nota5 = (valor - (nota100 * 100) - (nota50 * 50) - (nota20 * 20) - (nota10 * 10)) / 5;
+    nota2 = (valor - (nota100 * 100) - (nota50 * 50) - (nota20 * 20) - (nota10 * 10) - (nota5 * 5)) / 2;
 
-    restoMoedas = valor - ((nota100*100) + (nota50*50) + (nota20*20) + (nota10*10) + (nota5*5) + (nota2*2));
-    moeda100 = restoMoedas;
-    moeda50 = ((restoMoedas - 1) * 100) / 50;
-    moeda25 = (((restoMoedas - 1) * 100) - 50) / 25;
-    if(moeda25 == 0){
-    moeda10 = (((restoMoedas - 1) * 100) - 50) / 10;
-    }
+    // Cálculo do restante em centavos, convertendo para inteiro
+    restoMoedas = (int)((valor - ((nota100 * 100) + (nota50 * 50) + (nota20 * 20) + (nota10 * 10) + (nota5 * 5) + (nota2 * 2))) * 100);
 
+    // Cálculo das moedas
+    moeda100 = restoMoedas / 100;  // Quantidade de moedas de R$ 1,00
+    restoMoedas = restoMoedas % 100; // Resto em centavos após contar as moedas de R$ 1,00
+
+    moeda50 = restoMoedas / 50;  // Quantidade de moedas de R$ 0,50
+    restoMoedas = restoMoedas % 50; // Resto em centavos após contar as moedas de R$ 0,50
+
+    moeda25 = restoMoedas / 25;  // Quantidade de moedas de R$ 0,25
+    restoMoedas = restoMoedas % 25; // Resto em centavos após contar as moedas de R$ 0,25
+
+    moeda10 = restoMoedas / 10;  // Quantidade de moedas de R$ 0,10
+    restoMoedas = restoMoedas % 10; // Resto em centavos após contar as moedas de R$ 0,10
+
+    moeda5 = restoMoedas / 5;    // Quantidade de moedas de R$ 0,05
+    restoMoedas = restoMoedas % 5; // Resto em centavos após contar as moedas de R$ 0,05
+
+    moeda1 = restoMoedas;         // O que sobrar será o número de moedas de R$ 0,01
+
+    // Exibir o resultado
     printf("NOTAS:\n");
-    printf("%d nota(s) de R$ 100,00\n", nota100);
-    printf("%d nota(s) de R$ 50,00\n", nota50);
-    printf("%d nota(s) de R$ 20,00\n", nota20);
-    printf("%d nota(s) de R$ 10,00\n", nota10);
-    printf("%d nota(s) de R$ 5,00\n", nota5);
-    printf("%d nota(s) de R$ 2,00\n", nota2);
+    printf("%d nota(s) de R$ 100.00\n", nota100);
+    printf("%d nota(s) de R$ 50.00\n", nota50);
+    printf("%d nota(s) de R$ 20.00\n", nota20);
+    printf("%d nota(s) de R$ 10.00\n", nota10);
+    printf("%d nota(s) de R$ 5.00\n", nota5);
+    printf("%d nota(s) de R$ 2.00\n", nota2);
 
     printf("MOEDAS:\n");
-
-
-
+    printf("%d moeda(s) de R$ 1.00\n", moeda100);
+    printf("%d moeda(s) de R$ 0.50\n", moeda50);
+    printf("%d moeda(s) de R$ 0.25\n", moeda25);
+    printf("%d moeda(s) de R$ 0.10\n", moeda10);
+    printf("%d moeda(s) de R$ 0.05\n", moeda5);
+    printf("%d moeda(s) de R$ 0.01\n", moeda1);
 
     return 0;
 }
