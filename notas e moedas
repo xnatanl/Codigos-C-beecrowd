@@ -57,3 +57,25 @@ int main() {
 
     return 0;
 }
+
+/*
+#include<stdio.h>
+
+int main(){
+    int notas, moedas;
+scanf("%d.%d", &notas, &moedas); // variavel1 . variavel2
+
+int n100 = notas / 100;
+notas = notas % 100;
+
+int n50 = notas / 50;
+notas = notas % 50;
+
+int n100 = notas / 20;
+notas = notas % 20;
+
+
+}
+
+
+*/
