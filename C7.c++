@@ -30,7 +30,9 @@ int main() {
     dias = dias % 365;
     int m = dias / 30;
     int d = dias % 30;
-    
+    printf("1 ano(s)\n", a);
+    printf("1 meses(es)\n", m);
+    printf("1 dias(s)\n", d);
 }
 
 */
