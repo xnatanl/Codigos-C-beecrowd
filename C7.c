@@ -28,6 +28,8 @@ int main() {
 
     int a = dias / 365;
     dias = dias % 365;
+    int m = dias / 30;
+    int d = dias % 30;
     
 }
 
