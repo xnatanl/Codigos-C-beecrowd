@@ -23,11 +23,12 @@ PROF:
 
 int main() {
 
-    double raio;
-    scanf("%lf", &raio);
-    double v = 
+    int dias;
+    scanf("%d", &dias);
 
-    return 0;
+    int a = dias / 365;
+    dias = dias % 365;
+    
 }
 
 */
