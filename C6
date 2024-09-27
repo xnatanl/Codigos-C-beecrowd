@@ -12,3 +12,24 @@ int main() {
 
     return 0;
 }
+
+/*
+
+PROF:
+#include <stdio.h>
+
+int main() {
+
+    int N1, N2;
+    double V1, V2, TOTAL;
+
+    scanf("%*d %d %lf", &N1, &V1); // * DESCARTA MEMORIA VARIAVEL
+    scanf("%*d %d %lf", &N2, &V2); // * DESCARTA MEMORIA VARIAVEL
+
+    TOTAL = (N1*V1) + (N2*V2);
+    printf("VALOR A PAGAR: R$ %.2lf\n", TOTAL);
+
+    return 0;
+}
+
+*/
