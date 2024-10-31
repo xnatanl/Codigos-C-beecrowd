@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int filho, filha, soma;
+    
+    for(int i = 1; i > 0; i++)
+    {
+    
+        scanf("%d %d", &filho, &filha);
+        
+        soma = filho + filha;
+        
+            if(soma == 0)
+            {
+                return 0;
+            }
+        
+        printf("%d\n", soma);
+    }
+    return 0;
+    
+}
