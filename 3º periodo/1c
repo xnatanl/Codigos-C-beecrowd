@@ -1,0 +1,19 @@
+#include<stdio.h>
+
+void convert(double C, double *K, double *F){
+    *F = (C * 1.8) + 32;
+    *K = C + 273.15;
+}
+
+int main(){
+
+    double C, K, F;
+    scanf("%lf", &C);
+    printf("%.lf\n", C);
+
+    convert(C, &K, &F);
+
+    printf("K = %.2lf\nF = %.2lf\n", K, F);
+
+    return 0;
+}
